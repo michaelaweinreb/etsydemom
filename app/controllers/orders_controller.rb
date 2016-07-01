@@ -1,3 +1,4 @@
+
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
@@ -29,6 +30,7 @@ class OrdersController < ApplicationController
     @order.listing_id = @listing.id
     @order.buyer_id = current_user.id
     @order.seller_id = @seller.id
+
 
     respond_to do |format|
       if @order.save
